@@ -1,18 +1,19 @@
-import './globals.css'
+import "./globals.css";
+import Header from "../components/Header";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  //dark:bg-zinc-900
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className="bg-gray-100  transition-all duration-700">
+        <Header />
+        <div className="max-w-6xl mx-auto">{children}</div>
+      </body>
     </html>
-  )
+  );
 }
